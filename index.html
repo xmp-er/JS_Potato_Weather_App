@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- outlined div -->
+    <div container class="bg-sky-200 gap-4 w-screen h-screen flex flex-col justify-center items-center">
+        <h1 class="text-7xl font-bold">Weather App</h1>
+        <!-- container -->
+        <div container_main class="flex flex-col">
+            <!-- the two components search and display -->
+            <div search_and_display class="flex">
+                <!-- display -->
+                <div display_result>
+                </div>
+                <!-- search -->
+                <div search_input>
+                </div>
+            </div>
+            <!-- search container -->
+            <div result_container class="flex flex-col gap-3 items-center justify-center">
+                <input type="text" placeholder="City Name" city>
+                <input type="text" class="" placeholder="State Code" state_code>
+                <input type="text" class="" placeholder="Country Code" country_code>
+                <svg search_button class="mb-[20px] mt-[5px]"button xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                <div labels class="flex flex-col items-left"> 
+                    <label  for="city"><input city_checkbox type="checkbox" name="city"> City </label>
+                    <label  for="city"><input state_checkbox type="checkbox" name="state_code"> State Code </label>
+                    <label  for="city"><input country_checkbox type="checkbox" name="country_code"> Country Code </label>
+                </div>
+            </div>
+            <!-- display container -->
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
