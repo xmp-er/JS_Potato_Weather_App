@@ -6,8 +6,33 @@ city_checkbox=document.querySelector("[city_checkbox]")
 state_checkbox=document.querySelector("[state_checkbox]")
 country_checkbox=document.querySelector("[country_checkbox]")
 
+//fetchign the final_result container elements
+
+let temprature=document.querySelector("[temprature]")
+let feels_like=document.querySelector("[feels_like]")
+let humidity=document.querySelector("[humidity]")
+let pressure=document.querySelector("[pressure]")
+//special
+let wind_speed=document.querySelector("[wind_speed]")
+let wind_direction=document.querySelector("[wind_direction]")
+
+let cloud=document.querySelector("[cloud]")
+let visibility=document.querySelector("[visibility]")
+let precipitation=document.querySelector("[precipitation]")
+let weather=document.querySelector("[weather]")
+let last_update=document.querySelector("[last_update]")
+let lat=document.querySelector("[lat]")
+let lon=document.querySelector("[lon]")
+
+
 //API key
 let API="0fbb7f86934ccf487afff16655db9a70";
+
+//fetching the display container
+let display_container=document.querySelector("[display_container]")
+//by default it will be hidden
+let display_container_class=display_container.classList
+display_container_class.toggle('hidden')
 
 //array of checkboxes elements
 let checkboxes=[city_checkbox,country_checkbox,state_code]
@@ -83,4 +108,21 @@ search_button.addEventListener('click',async function(){
         return;
     }
     let data_obtained=await main_weather_function(temp_checkbox)
+    console.log(data_obtained)
+    temprature.textContent+=data_obtained.main.temp
+    feels_like.textContent+=data_obtained.main.temp
+    humidity.textContent+=data_obtained.main.humidity
+    pressure.textContent+=data_obtained.main.pressure
+//special
+    wind_speed.textContent+=data_obtained.wind.speed
+    wind_direction.textContent+=data_obtained.wind.deg
+
+    cloud.textContent+=data_obtained.weather[0].description
+    visibility+=data_obtained.visibility+" meteres"
+    console.log(data_obtained.coord.lat)
+    console.log(lat)
+    lat.textContent+=data_obtained.coord.lat
+    lon.textContent+=data_obtained.coord.lon
+
+    display_container.remove('hidden')
 })

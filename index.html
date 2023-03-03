@@ -12,16 +12,13 @@
     <div container class="bg-sky-200 gap-4 w-screen h-screen flex flex-col justify-center items-center">
         <h1 class="text-7xl font-bold">Weather App</h1>
         <!-- container -->
-        <div container_main class="flex flex-col">
+         <!-- buttons -->
+         <div class="flex justify-between gap-4 w-9/12">
+            <button class="text-3xl">Results</button>
+            <button class="text-3xl">Search</button>
+        </div>
+        <div container_main class="flex flex-col w-9/12">
             <!-- the two components search and display -->
-            <div search_and_display class="flex">
-                <!-- display -->
-                <div display_result>
-                </div>
-                <!-- search -->
-                <div search_input>
-                </div>
-            </div>
             <!-- search container -->
             <div result_container class="flex flex-col gap-3 items-center justify-center">
                 <input type="text" placeholder="City Name" city>
@@ -37,7 +34,16 @@
                 </div>
             </div>
             <!-- display container -->
-
+            <div display_container class="flex flex-col gap-2 text-clip whitespace-nowrap overflow-hidden w-full ">
+                <div temprature>Temprature is </div>
+                <div feels_like>Currently,it feels like </div>
+                <div humidity>The humidity is </div>
+                <div pressure>The pressure in hPa is </div>
+                <div wind>The wind speed value is <div wind_speed></div> and the direction is <div wind_direction></div></div>
+                <div cloud>The Cloudiness value is</div>
+                <div visibility>The visibility value is </div>
+                <div>The data is being shown for the <div lat>latitude </div> and <div lon>longitude </div></div>
+            </div>
         </div>
     </div>
     <script src="index.js"></script>
