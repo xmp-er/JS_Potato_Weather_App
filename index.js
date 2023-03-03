@@ -7,7 +7,7 @@ state_checkbox=document.querySelector("[state_checkbox]")
 country_checkbox=document.querySelector("[country_checkbox]")
 
 //API key
-let API="40fc26f8deafa1f4e81aa304dd5685fc";
+let API="0fbb7f86934ccf487afff16655db9a70";
 
 //array of checkboxes elements
 let checkboxes=[city_checkbox,country_checkbox,state_code]
@@ -19,8 +19,7 @@ let checkboxes=[city_checkbox,country_checkbox,state_code]
 async function city_call(){
     try{
         let data=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${API}`)
-        let res= await data.json()
-        return res
+        return await data.json()
     }catch(e){
         console.log(e);
     }
@@ -50,7 +49,7 @@ async function state_call(){
 
 
 //function call of the WeatherApp API
-async function main_weather_function(temp_checkbox){
+function main_weather_function(temp_checkbox){
     let len=temp_checkbox.length;
     if(len==0){
         alert("Please check one of the boxes");
@@ -66,7 +65,7 @@ async function main_weather_function(temp_checkbox){
 }
 
 // function for the search button
-search_button.addEventListener('click',function(){
+search_button.addEventListener('click',async function(){
     let cnt=0;
     let temp_checkbox=[];
     for(let i=0;i<checkboxes.length;i++){
@@ -83,6 +82,5 @@ search_button.addEventListener('click',function(){
         alert("Please tick at least one Check-box to know the weather of desired location");
         return;
     }
-    main_weather_function(temp_checkbox)
+    let data_obtained=await main_weather_function(temp_checkbox)
 })
-
