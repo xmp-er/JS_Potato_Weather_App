@@ -26,7 +26,7 @@ let lon=document.querySelector("[lon]")
 
 
 //API key
-let API="0fbb7f86934ccf487afff16655db9a70";
+let API=process.env.MY_API_KEY
 
 //fetching the container
 let display_container=document.querySelector("[display_container]")
