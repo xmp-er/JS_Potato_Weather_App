@@ -34,7 +34,7 @@ let search_container=document.querySelector("[search_container]")
 
 //by default it will be hidden
 let display_container_class=display_container.classList
-display_container_class.toggle("hidden")
+display_container_class.toggle('hidden')
 
 //search continer classList
 let search_container_class=search_container.classList
@@ -104,18 +104,18 @@ function main_weather_function(temp_checkbox){
 
 //function for hiding search container and bringing result container
 function bring_search_container(){
-    display_container_class.toggle("hidden")
-    search_container_class.remove("hidden")
+    display_container_class.toggle('hidden')
+    search_container_class.toggle('hidden')
 }
 
 //function for hiding result container and bringing search container
-function bring_display_container(){
-    if(results_inserted==false){
-        alert("kindly enter the details so the result can be displayed")
+function bring_display_container() {
+    if(results_inserted == false) {
+        alert("Kindly enter the details so the result can be displayed");
         return;
-    }else{
-        search_container_class.toggle("hidden")
-        display_container_class.remove("hidden");
+    } else {
+        display_container_class.toggle('hidden')
+        search_container_class.toggle('hidden')
     }
 }
 
@@ -149,8 +149,6 @@ search_button.addEventListener('click',async function(){
 
     cloud.textContent+=data_obtained.weather[0].description
     visibility+=data_obtained.visibility+" meteres"
-    console.log(data_obtained.coord.lat)
-    console.log(lat)
     lat.textContent+=data_obtained.coord.lat
     lon.textContent+=data_obtained.coord.lon
     //check that there is some info to display
